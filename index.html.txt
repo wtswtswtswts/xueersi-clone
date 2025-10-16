@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学而思选课中心</title>
+  <style>
+    body {
+      font-family: "微软雅黑", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #fff;
+      color: #333;
+      padding: 1em 2em;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    header .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
+      color: #d32f2f;
+    }
+    .search-bar {
+      margin-top: 1em;
+      display: flex;
+      gap: 1em;
+      align-items: center;
+    }
+    .search-bar input[type="text"] {
+      flex: 1;
+      padding: 0.5em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .search-bar button {
+      padding: 0.5em 1em;
+      background-color: #d32f2f;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 1em 0 0;
+      display: flex;
+      gap: 2em;
+      border-top: 1px solid #eee;
+      padding-top: 1em;
+    }
+    nav ul li a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .filter-bar {
+      padding: 1em 2em;
+      background-color: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      border-bottom: 1px solid #eee;
+    }
+    .filter-bar span {
+      background-color: #f0f0f0;
+      padding: 0.4em 0.8em;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    .filter-bar .active {
+      background-color: #d32f2f;
+      color: white;
+    }
+    .section-title {
+      padding: 1.5em 2em 0.5em;
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+    .course-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5em;
+      padding: 1em 2em 2em;
+    }
+    .course-card {
+      background-color: white;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .course-card .label {
+      background-color: #f5c26b;
+      color: white;
+      padding: 0.2em 0.6em;
+      font-size: 0.8em;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 0.5em;
+    }
+    .course-card h3 {
+      margin: 0.5em 0;
+      font-size: 1.1em;
+    }
+    .course-card p {
+      font-size: 0.9em;
+      color: #666;
+    }
+    .teacher-avatars {
+      display: flex;
+      gap: 0.5em;
+      margin: 1em 0;
+    }
+    .teacher-avatars img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .price {
+      font-size: 1.2em;
+      color: #d32f2f;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 1em;
+      background-color: #f1f1f1;
+      color: #777;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <h1>学而思网校</h1>
+      <button style="background:#d32f2f;color:#fff;border:none;padding:0.5em 1em;border-radius:4px;cursor:pointer;">登录/注册</button>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="搜索课程关键词或老师">
+      <button>搜索</button>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">关于学而思</a></li>
+        <li><a href="#">素养课程</a></li>
+        <li><a href="#">素养生活</a></li>
+        <li><a href="#">客户端下载</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="filter-bar">
+    <strong>年级：</strong>
+    <span class="active">六年级</span>
+    <span>一年级</span>
+    <span>二年级</span>
+    <span>三年级</span>
+    <span>四年级</span>
+    <span>五年级</span>
+    <strong>学科：</strong>
+    <span class="active">全部</span>
+    <span>人文创作</span>
+    <span>科学</span>
+    <span>编程</span>
+    <span>国际象棋</span>
+  </section>
+
+  <div class="section-title">系统课</div>
+  <section class="course-list">
+    <div class="course-card">
+      <div class="label">人文创作</div>
+      <h3>人文创作系统课</h3>
+      <p>共10个课程可选</p>
+      <div class="teacher-avatars">
+        <img src="https://i.pravatar.cc/100?img=11" alt="老师1">
+        <img src="https://i.pravatar.cc/100?img=12" alt="老师2">
+        <img src="https://i.pravatar.cc/100?img=13" alt="老师3">
+      </div>
+      <div class="price">¥2640 起</div>
+    </div>
+
+    <div class="course-card">
+      <div class="label" style="background-color:#4caf50;">科学</div>
+      <h3>科学思维系统课</h3>
+      <p>共5个课程可选</p>
+      <div class="teacher-avatars">
+        <img src="https://i.pravatar.cc/100?img=14" alt="老师4">
+        <img src="https://i.pravatar.cc/100?img=15" alt="老师5">
+        <img src="https://i.pravatar.cc/100?img=16" alt="老师6">
+      </div>
+      <div class="price">¥3040 起</div>
+    </div>
+
+    <div class="course-card">
+      <div class="label" style="background-color:#f57c00;">编程</div>
+      <h3>编程系统课</h3>
+      <p>共5个课程可选</p>
+      <div class="teacher-avatars">
+        <img src="https://i.pravatar.cc/100?img=17" alt="老师7">
+        <img src="https://i.pravatar.cc/100?img=18" alt="老师8">
+      </div>
+      <div class="price">¥3200 起</div>
+    </div>
+
+    <div class="course-card">
+      <div class="label" style="background-color:#8e44ad;">国际象棋</div>
+      <h3>国际象棋系统课</h3>
+      <p>共3个课程可选</p>
+      <div class="teacher-avatars">
+        <img src="https://i.pravatar.cc/100?img=19" alt="老师9">
+        <img src="https://i.pravatar.cc/100?img=20" alt="老师10">
+      </div>
+      <div class="price">¥2880 起</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 学而思网校 | 本页面为学习项目仿制，不代表官方内容</p>
+  </footer>
+</body>
+</html>
